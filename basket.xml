@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- This file is part nereid_basket module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.ui.view" id="sale_basket_view_tree">
+            <field name="model">sale.basket</field>
+            <field name="inherit" ref="sale_basket.sale_basket_view_tree"/>
+            <field name="name">basket_tree</field>
+        </record>
+    </data>
+</tryton>

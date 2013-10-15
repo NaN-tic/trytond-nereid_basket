@@ -1,0 +1,19 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "error:sale.basket:"
+msgid "Basket \"%s - %s\" is done. Can not deletion."
+msgstr "La cesta \"%s - %s\" ya está realizada. No se puede eliminar."
+
+msgctxt "field:nereid.website,basket_guest:"
+msgid "Basket Guest"
+msgstr "Cestas anonimas"
+
+msgctxt "field:sale.basket,nereid_sessionid:"
+msgid "Session ID"
+msgstr "Sessión ID"
+
+msgctxt "field:sale.basket,nereid_user:"
+msgid "User"
+msgstr "Usuario"

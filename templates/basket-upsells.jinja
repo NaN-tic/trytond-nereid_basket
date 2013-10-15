@@ -1,0 +1,25 @@
+{% if upsells %}
+<h4>{{ _('Based on your selection,<br/> you may be interested in the following items:') }}</h4>
+<form action="{{ url_for('sale.basket.add') }}" method="post" class="upsells_summary" id="upsells_formset">
+<table class="table">
+    <thead>
+          <tr>
+            <th class="span4">{{ _('Product') }}</th>
+            <th class="span4">{{ _('Price') }}</th>
+            <th class="span2"></th>
+            <th class="span2"></th>
+          </tr>
+    </thead>
+    <tbody>
+{% for upsell in upsells %}
+      <tr>
+        <td class="span4"><a href="{{ url_for('product.product.render', uri=upsell['product'].esale_slug) }}" alt="{{ upsell['product'].name }}">{{ upsell['product'].name }}</a></td>
+        <td class="span4">{{ upsell['unit_price']|round(2) }} {{ currency.symbol }}</td>
+        <td class="span2"><input type="text" class="input-mini" name="{{ upsell['product'].code }}" value="0" id="upsell-{{upsell['product'].code}}" /></td>
+        <td class="span2"><button class="btn-success btn-mini" type="submit">{{ _('Add') }}</button></td>
+      </tr>
+{% endfor %}
+    </tbody>
+</table>
+</form>
+{% endif %}
