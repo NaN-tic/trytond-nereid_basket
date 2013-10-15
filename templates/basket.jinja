@@ -36,10 +36,10 @@
                         </div>
                     </div>
                     <div class="span2">
-                        <span class="price_color">{{ line.unit_price|round(2) }} {{ line.currency.symbol }}<span>
+                        <span class="price_color">{{ line.unit_price|currencyformat(line.currency.code) }}<span>
                     </div>
                     <div class="span2">
-                        <span class="price_color">{{ line.untaxed_amount|round(2) }} {{ line.currency.symbol }}<span>
+                        <span class="price_color">{{ line.untaxed_amount|currencyformat(line.currency.code) }}<span>
                     </div>
                 </div>
                 {% endfor %}
@@ -60,9 +60,9 @@
                             <table class="table table-bordered">
                             <tbody>
                             <tr><th colspan="2"><h4>{{ _('Basket') }}</h4></th></tr>
-                            <tr class="success"><td>{{ _('Untaxed total') }}</td><td class="align-right">{{ untaxed_amount|round(2) }} {{ currency.symbol }}</td></tr>
+                            <tr class="success"><td>{{ _('Untaxed total') }}</td><td class="align-right">{{ untaxed_amount|currencyformat(currency.code) }}</td></tr>
                             <tr><th>&nbsp;</th><td></td></tr>
-                            <tr class="success"><td><h4>{{ _('Order total') }}</h4></td><td class="align-right"><h3 class="price_color">{{ total_amount|round(2) }} {{ currency.symbol }}</h3></td></tr>
+                            <tr class="success"><td><h4>{{ _('Order total') }}</h4></td><td class="align-right"><h3 class="price_color">{{ total_amount|currencyformat(currency.code) }}</h3></td></tr>
                             </tbody>
                             </table>
                         </div>
