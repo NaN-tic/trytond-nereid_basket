@@ -1,7 +1,7 @@
 #This file is part nereid_basket module for Tryton.
 #The COPYRIGHT file at the top level of this repository contains 
 #the full copyright notices and license terms.
-from nereid import render_template, request
+from nereid import render_template, request, flash
 from nereid.globals import session
 from nereid.helpers import url_for
 from werkzeug import redirect
@@ -10,6 +10,7 @@ from trytond.pyson import Eval
 from trytond.model import fields
 from trytond.transaction import Transaction
 from trytond.pool import Pool, PoolMeta
+from trytond.modules.nereid.i18n import _
 
 from decimal import Decimal
 
@@ -137,7 +138,7 @@ class Basket:
 
         if to_create:
             cls.create(to_create)
-
+        flash(_('Your cart are updated'))
         return redirect(
             request.args.get('next', url_for('sale.basket.render'))
             )
@@ -168,6 +169,7 @@ class Basket:
         lines = cls.search(clause)
         if lines:
             cls.delete(lines)
+        flash(_('Your cart are removed some products'))
         return redirect(
             request.args.get('next', url_for('sale.basket.render'))
             )
