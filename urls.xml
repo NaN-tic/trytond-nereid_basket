@@ -2,26 +2,26 @@
 <tryton>
     <data >
         <record id="basket_uri" model="nereid.url_rule">
-            <field name="rule">/&lt;language&gt;/basket/</field>
+            <field name="rule">/basket/</field>
             <field name="endpoint">sale.basket.render</field>
             <field name="sequence" eval="10" />
             <field name="url_map" ref="nereid.default_url_map" />
         </record>
         <record id="add_uri" model="nereid.url_rule">
-            <field name="rule">/&lt;language&gt;/basket/add/</field>
+            <field name="rule">/basket/add/</field>
             <field name="endpoint">sale.basket.add</field>
             <field name="sequence" eval="20" />
             <field name="http_method_post" eval="True"/>
             <field name="url_map" ref="nereid.default_url_map" />
         </record>
         <record id="remove_uri" model="nereid.url_rule">
-            <field name="rule">/&lt;language&gt;/basket/remove/&lt;id&gt;</field>
+            <field name="rule">/basket/remove/&lt;id&gt;</field>
             <field name="endpoint">sale.basket.remove</field>
             <field name="sequence" eval="30" />
             <field name="url_map" ref="nereid.default_url_map" />
         </record>
         <record id="checkout_uri" model="nereid.url_rule">
-            <field name="rule">/&lt;language&gt;/checkout/</field>
+            <field name="rule">/checkout/</field>
             <field name="endpoint">sale.basket.checkout</field>
             <field name="sequence" eval="40" />
             <field name="url_map" ref="nereid.default_url_map" />
